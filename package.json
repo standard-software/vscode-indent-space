@@ -2,7 +2,7 @@
   "name": "vscode-indent-space",
   "displayName": "Indent Space",
   "description": "Extension to insert, select, and convert at the beginning of a line.",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "publisher": "SatoshiYamamoto",
   "author": {
     "name": "Satoshi Yamamoto",
