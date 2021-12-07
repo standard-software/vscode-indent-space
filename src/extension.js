@@ -63,7 +63,6 @@ function activate(context) {
   registerCommand(`IndentSpace.SelectFunction`, () => {
 
     let select1EditChange, select1EditCut, select1Copy;
-
     commandQuickPick([
       [`Edit Change`,     ``, () => { select1EditChange(); }],
       [`Edit Cut`,        ``, () => { select1EditCut(); }],
@@ -128,6 +127,7 @@ function activate(context) {
       const changeIndent = (str, newStr) => {
         for (let { start, end } of editor.selections) {
           for (let i = start.line; i <= end.line; i += 1) {
+            if (i === end.line && end.character === 0) { break; }
             const line = editor.document.lineAt(i).text;
             const trimLine = _trimFirst(line, [` `, `\t`]);
             const indent = _subIndex(line, 0, line.length - trimLine.length - 1);
@@ -165,6 +165,7 @@ function activate(context) {
         const minIndent = getMinIndent(editor);
         for (let { start, end } of editor.selections) {
           for (let i = start.line; i <= end.line; i += 1) {
+            if (i === end.line && end.character === 0) { break; }
             const line = editor.document.lineAt(i).text;
             if (
               (_trim(line) === ``) && (line.length < minIndent)
@@ -180,6 +181,7 @@ function activate(context) {
       case `TrimBegin`: {
         for (let { start, end } of editor.selections) {
           for (let i = start.line; i <= end.line; i += 1) {
+            if (i === end.line && end.character === 0) { break; }
             const line = editor.document.lineAt(i).text;
             const trimLine = _trimFirst(line, [` `, `\t`]);
             if (line.length === trimLine.length) { continue; }
@@ -209,6 +211,7 @@ function activate(context) {
       let result = ``;
       for (let { start, end } of editor.selections) {
         for (let i = start.line; i <= end.line; i += 1) {
+          if (i === end.line && end.character === 0) { break; }
           const { text, textIncludeLineBreak } = getLineTextInfo(editor, i);
           if (text.length <= minIndent) {
             result += textIncludeLineBreak;
@@ -224,6 +227,7 @@ function activate(context) {
       let result = ``;
       for (let { start, end } of editor.selections) {
         for (let i = start.line; i <= end.line; i += 1) {
+          if (i === end.line && end.character === 0) { break; }
           const { textIncludeLineBreak } = getLineTextInfo(editor, i);
           result += _trimFirst(textIncludeLineBreak, [` `, `\t`],);
         }

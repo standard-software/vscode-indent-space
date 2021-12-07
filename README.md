@@ -56,6 +56,11 @@ Or Select Function
 
 ## Version
 
+### 1.1.0
+2021/12/08(Wed)
+- update README
+- update fix Select Range endLine
+
 ### 1.0.0
 2021/12/06(Mon)
 - release
@@ -71,3 +76,12 @@ Or Select Function
 2021/12/05(Sun)
 - Created by migrating from vscode-begin-of-line  
 https://github.com/standard-software/vscode-begin-of-line
+
+[version-badge]: https://vsmarketplacebadge.apphb.com/version/SatoshiYamamoto.vscode-indent-space.svg
+[ratings-badge]: https://vsmarketplacebadge.apphb.com/rating/SatoshiYamamoto.vscode-indent-space.svg
+[installs-badge]: https://vsmarketplacebadge.apphb.com/installs/SatoshiYamamoto.vscode-indent-space.svg
+[license-badge]: https://img.shields.io/github/license/standard-software/vscode-indent-space.svg
+
+[marketplace]: https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space
+[marketplace-ratings]: https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space#review-details
+[license]: https://github.com/standard-software/vscode-indent-space/blob/master/LICENSE
