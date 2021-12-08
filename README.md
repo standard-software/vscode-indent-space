@@ -56,6 +56,11 @@ Or Select Function
 
 ## Version
 
+### 1.1.1
+2021/12/08(Wed)
+- refactoring
+- eslint fix
+
 ### 1.1.0
 2021/12/08(Wed)
 - update README
