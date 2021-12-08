@@ -4,22 +4,36 @@ const {
   _subIndex, _subLength,
 } = require(`./parts/parts.js`);
 
+
+const loopSelectionsLines = (editor, func) => {
+  for (const { start, end } of editor.selections) {
+    for (let i = start.line; i <= end.line; i += 1) {
+      if (
+        start.line !== end.line &&
+        i === end.line &&
+        end.character === 0
+      ) {
+        break;
+      }
+      func(i);
+    }
+  }
+};
+
 const getIndent = (line) => {
   return line.length - _trimFirst(line, [` `, `\t`]).length;
 };
 
 const getMinIndent = (editor) => {
   let minIndent = Infinity;
-  for (let { start, end } of editor.selections) {
-    for (let i = start.line; i <= end.line; i += 1) {
-      const line = editor.document.lineAt(i).text;
-      if (_trim(line) === ``) { continue; }
-      const indent = getIndent(line);
-      if (indent < minIndent) {
-        minIndent = indent;
-      }
+  loopSelectionsLines(editor, i => {
+    const line = editor.document.lineAt(i).text;
+    if (_trim(line) === ``) { return; }
+    const indent = getIndent(line);
+    if (indent < minIndent) {
+      minIndent = indent;
     }
-  };
+  });
   if (minIndent === Infinity) { minIndent = 0; }
   return minIndent;
 };
@@ -125,18 +139,15 @@ function activate(context) {
     editor.edit(editBuilder => {
 
       const changeIndent = (str, newStr) => {
-        for (let { start, end } of editor.selections) {
-          for (let i = start.line; i <= end.line; i += 1) {
-            if (i === end.line && end.character === 0) { break; }
-            const line = editor.document.lineAt(i).text;
-            const trimLine = _trimFirst(line, [` `, `\t`]);
-            const indent = _subIndex(line, 0, line.length - trimLine.length - 1);
-            const range = new vscode.Range(
-              i, 0, i, line.length - trimLine.length,
-            );
-            editBuilder.replace(range, indent.replaceAll(str, newStr));
-          }
-        };
+        loopSelectionsLines(editor, i => {
+          const line = editor.document.lineAt(i).text;
+          const trimLine = _trimFirst(line, [` `, `\t`]);
+          const indent = _subIndex(line, 0, line.length - trimLine.length - 1);
+          const range = new vscode.Range(
+            i, 0, i, line.length - trimLine.length,
+          );
+          editBuilder.replace(range, indent.replaceAll(str, newStr));
+        });
       };
 
       switch (commandName) {
@@ -163,34 +174,26 @@ function activate(context) {
 
       case `CutMinIndent`: {
         const minIndent = getMinIndent(editor);
-        for (let { start, end } of editor.selections) {
-          for (let i = start.line; i <= end.line; i += 1) {
-            if (i === end.line && end.character === 0) { break; }
-            const line = editor.document.lineAt(i).text;
-            if (
-              (_trim(line) === ``) && (line.length < minIndent)
-            ) { continue; }
-            const range = new vscode.Range(
-              i, 0, i, minIndent,
-            );
-            editBuilder.delete(range);
-          }
-        };
+        loopSelectionsLines(editor, i => {
+          const line = editor.document.lineAt(i).text;
+          if ((_trim(line) === ``) && (line.length < minIndent)) { return; }
+          const range = new vscode.Range(
+            i, 0, i, minIndent,
+          );
+          editBuilder.delete(range);
+        });
       } break;
 
       case `TrimBegin`: {
-        for (let { start, end } of editor.selections) {
-          for (let i = start.line; i <= end.line; i += 1) {
-            if (i === end.line && end.character === 0) { break; }
-            const line = editor.document.lineAt(i).text;
-            const trimLine = _trimFirst(line, [` `, `\t`]);
-            if (line.length === trimLine.length) { continue; }
-            const range = new vscode.Range(
-              i, 0, i, line.length - trimLine.length,
-            );
-            editBuilder.delete(range);
-          }
-        };
+        loopSelectionsLines(editor, i => {
+          const line = editor.document.lineAt(i).text;
+          const trimLine = _trimFirst(line, [` `, `\t`]);
+          if (line.length === trimLine.length) { return; }
+          const range = new vscode.Range(
+            i, 0, i, line.length - trimLine.length,
+          );
+          editBuilder.delete(range);
+        });
       } break;
 
       }
