@@ -101,9 +101,8 @@
     }
   },
   "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "node ./test/runTest.js"
+    "lint": "eslint --fix ./src",
+    "": ""
   },
   "devDependencies": {
     "@types/glob": "^7.1.4",

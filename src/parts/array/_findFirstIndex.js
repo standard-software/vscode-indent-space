@@ -1,11 +1,11 @@
-const { isBoolean } = require('../type/isBoolean.js')
+const { isBoolean } = require(`../type/isBoolean.js`);
 
 const _findFirstIndex = (array, func) => {
   for (let i = 0, l = array.length; i < l; i += 1) {
     const resultFunc = func(array[i], i, array);
     if (!isBoolean(resultFunc)) {
       throw new TypeError(
-        '_findFirstIndex args(compareFunc) result is not boolean',
+        `_findFirstIndex args(compareFunc) result is not boolean`,
       );
     }
     if (resultFunc) {
@@ -15,4 +15,4 @@ const _findFirstIndex = (array, func) => {
   return -1;
 };
 
-module.exports = { _findFirstIndex }
+module.exports = { _findFirstIndex };

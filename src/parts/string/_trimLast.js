@@ -1,11 +1,11 @@
-const { isUndefined } = require('../type/isUndefined.js')
-const { _findFirst } = require('../array/_findFirst.js')
-const { _isLast } = require('../string/_isLast.js')
-const { _deleteLast } = require('../string/_deleteLast.js')
+const { isUndefined } = require(`../type/isUndefined.js`);
+const { _findFirst } = require(`../array/_findFirst.js`);
+const { _isLast } = require(`../string/_isLast.js`);
+const { _deleteLast } = require(`../string/_deleteLast.js`);
 
 const _trimLast = (
   str,
-  valueArray = [' ', '\r', '\n'],
+  valueArray = [` `, `\r`, `\n`],
 ) => {
   while (true) {
     const value = _findFirst(
@@ -19,4 +19,4 @@ const _trimLast = (
   return str;
 };
 
-module.exports = { _trimLast }
+module.exports = { _trimLast };

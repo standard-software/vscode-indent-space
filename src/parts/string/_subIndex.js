@@ -4,4 +4,4 @@ const _subIndex = (
   return str.substring(indexStart, indexEnd + 1);
 };
 
-module.exports = { _subIndex }
+module.exports = { _subIndex };
