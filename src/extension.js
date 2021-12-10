@@ -80,7 +80,7 @@ function activate(context) {
     commandQuickPick([
       [`Edit Change`,     ``, () => { select1EditChange(); }],
       [`Edit Cut`,        ``, () => { select1EditCut(); }],
-      [`Clipboard Copy`,  ``, () => { select1Copy(); }],
+      [`Copy Clipboard`,  ``, () => { select1Copy(); }],
     ], `Indent Space | Select Function`);
 
     select1EditChange = () => {
@@ -124,7 +124,7 @@ function activate(context) {
       commandQuickPick([
         [`Cut Min Indent`,          ``, () => { mainCopy(`CopyCutMinIndent`); }],
         [`Cut Indent (Trim Begin)`, ``, () => { mainCopy(`CopyTrimBegin`); }],
-      ], `Indent Space | Clipboard Copy`);
+      ], `Indent Space | Copy Clipboard`);
     };
 
   });

@@ -7,7 +7,8 @@
 
 This extension has the following functions
 - Change the indentation type. Space 2 or 4 or Tab.
-- Remove indent space. and Edit or Clipboard Copy.
+- Remove indent space and edit.
+- Remove indent space and copy to clipboard.
 
 ## Install
 
@@ -30,8 +31,8 @@ Following commands are available:
 - `Indent Space | Edit Cut | Cut Min Indent`
 - `Indent Space | Edit Cut | Cut Indent (Trim Begin)`
 ---
-- `Indent Space | Clipboard Copy | Cut Min Indent`
-- `Indent Space | Clipboard Copy | Cut Indent (Trim Begin)`
+- `Indent Space | Copy Clipboard | Cut Min Indent`
+- `Indent Space | Copy Clipboard | Cut Indent (Trim Begin)`
 
 ---
 Or Select Function
@@ -50,11 +51,15 @@ Or Select Function
   - `Edit Cut`
     - `Cut Min Indent`
     - `Cut Indent (Trim Begin)`
-  - `Clipboard Copy`
+  - `Copy Clipboard`
     - `Cut Min Indent`
     - `Cut Indent (Trim Begin)`
 
 ## Version
+
+### 1.2.0
+2021/12/11(Sat)
+- "Clipboard Copy" >> "Copy Clipboard"
 
 ### 1.1.1
 2021/12/08(Wed)
