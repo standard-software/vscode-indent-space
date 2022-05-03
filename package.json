@@ -2,7 +2,8 @@
   "name": "vscode-indent-space",
   "displayName": "Indent Space",
   "description": "Extension to insert, select, and convert at the beginning of a line.",
-  "version": "1.2.0",
+  "version": "1.3.0",
+  "icon": "vscode-indent-space_icon.png",
   "publisher": "SatoshiYamamoto",
   "author": {
     "name": "Satoshi Yamamoto",
@@ -34,7 +35,6 @@
     "onCommand:IndentSpace.TrimBegin",
     "onCommand:IndentSpace.CopyCutMinIndent",
     "onCommand:IndentSpace.CopyTrimBegin",
-
     "onCommand:IndentSpace.SelectFunction"
   ],
   "main": "./src/extension.js",
@@ -102,17 +102,11 @@
   },
   "scripts": {
     "lint": "eslint --fix ./src",
+    "pack": "vsce package && code --install-extension vscode-indent-space-1.3.0.vsix",
     "": ""
   },
   "devDependencies": {
-    "@types/glob": "^7.1.4",
-    "@types/mocha": "^9.0.0",
-    "@types/node": "14.x",
-    "@types/vscode": "^1.60.0",
-    "@vscode/test-electron": "^1.6.2",
     "eslint": "^7.32.0",
-    "glob": "^7.1.7",
-    "mocha": "^9.1.1",
-    "typescript": "^4.4.3"
+    "vsce": "^2.7.0"
   }
 }

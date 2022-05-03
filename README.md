@@ -21,41 +21,48 @@ Enter the character string after selecting the command.
 
 Following commands are available:
 
-- `Indent Space | Edit Change | Space 2 to 4`
-- `Indent Space | Edit Change | Space 2 to Tab`
-- `Indent Space | Edit Change | Space 4 to 2`
-- `Indent Space | Edit Change | Space 4 to Tab`
-- `Indent Space | Edit Change | Tab to Space 2`
-- `Indent Space | Edit Change | Tab to Space 4`
----
-- `Indent Space | Edit Cut | Cut Min Indent`
-- `Indent Space | Edit Cut | Cut Indent (Trim Begin)`
----
-- `Indent Space | Copy Clipboard | Cut Min Indent`
-- `Indent Space | Copy Clipboard | Cut Indent (Trim Begin)`
+```
+- Indent Space | Edit Change | Space 2 to 4
+- Indent Space | Edit Change | Space 2 to Tab
+- Indent Space | Edit Change | Space 4 to 2
+- Indent Space | Edit Change | Space 4 to Tab
+- Indent Space | Edit Change | Tab to Space 2
+- Indent Space | Edit Change | Tab to Space 4
 
----
+- Indent Space | Edit Cut | Cut Min Indent
+- Indent Space | Edit Cut | Cut Indent (Trim Begin)
+
+- Indent Space | Copy Clipboard | Cut Min Indent
+- Indent Space | Copy Clipboard | Cut Indent (Trim Begin)
+```
+
 Or Select Function
 
-- `Indent Space | Select Function`
-  - `Edit Change`
-    - `Space 2`
-      - `Space 2 to 4`
-      - `Space 2 to Tab`
-    - `Space 4`
-      - `Space 4 to 2`
-      - `Space 4 to Tab`
-    - `Tab`
-      - `Tab to Space 2`
-      - `Tab to Space 4`
-  - `Edit Cut`
-    - `Cut Min Indent`
-    - `Cut Indent (Trim Begin)`
-  - `Copy Clipboard`
-    - `Cut Min Indent`
-    - `Cut Indent (Trim Begin)`
+```
+- Indent Space | Select Function
+  - Edit Change
+    - Space 2 to 4
+    - Space 2 to Tab
+    - Space 4 to 2
+    - Space 4 to Tab
+    - Tab to Space 2
+    - Tab to Space 4
+  - Edit Cut
+    - Cut Min Indent
+    - Cut Indent (Trim Begin)
+  - Copy Clipboard
+    - Cut Min Indent
+    - Cut Indent (Trim Begin)
+```
 
 ## Version
+
+### 1.3.0
+- Set title icon
+- update README
+- Remove unnecessary npm packages
+- Change command structure
+- set vscode debug config
 
 ### 1.2.0
 2021/12/11(Sat)

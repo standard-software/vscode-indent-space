@@ -84,33 +84,14 @@ function activate(context) {
     ], `Indent Space | Select Function`);
 
     select1EditChange = () => {
-      let select2Space2, select2Space4, select2Tab;
       commandQuickPick([
-        [`Space 2`,   ``, () => { select2Space2(); }],
-        [`Space 4`,   ``, () => { select2Space4(); }],
-        [`Tab`,       ``, () => { select2Tab(); }],
+        [`Space 2 to 4`,  ``, () => { mainEdit(`Space2To4`); }],
+        [`Space 2 to Tab`,  ``, () => { mainEdit(`Space2ToTab`); }],
+        [`Space 4 to 2`,  ``, () => { mainEdit(`Space4To2`); }],
+        [`Space 4 to Tab`,  ``, () => { mainEdit(`Space4ToTab`); }],
+        [`Tab to Space 2`,  ``, () => { mainEdit(`TabToSpace2`); }],
+        [`Tab to Space 4`,  ``, () => { mainEdit(`TabToSpace4`); }],
       ], `Indent Space | Edit Change`);
-
-      select2Space2 = () => {
-        commandQuickPick([
-          [`Space 2 to 4`,  ``, () => { mainEdit(`Space2To4`); }],
-          [`Space 2 to Tab`,  ``, () => { mainEdit(`Space2ToTab`); }],
-        ], `Indent Space | Edit Change | Space 2`);
-      };
-
-      select2Space4 = () => {
-        commandQuickPick([
-          [`Space 4 to 2`,  ``, () => { mainEdit(`Space4To2`); }],
-          [`Space 4 to Tab`,  ``, () => { mainEdit(`Space4ToTab`); }],
-        ], `Indent Space | Edit Change | Space 4`);
-      };
-
-      select2Tab = () => {
-        commandQuickPick([
-          [`Tab to Space 2`,  ``, () => { mainEdit(`TabToSpace2`); }],
-          [`Tab to Space 4`,  ``, () => { mainEdit(`TabToSpace4`); }],
-        ], `Indent Space | Edit Change | Tab`);
-      };
     };
 
     select1EditCut = () => {
