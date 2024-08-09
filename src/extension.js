@@ -61,31 +61,24 @@ function activate(context) {
     });
   };
 
+  const mark = `>>`;
+
   registerCommand(`IndentSpace.SelectFunction`, () => {
 
-    let select1EditChange, select1EditCut;
     commandQuickPick([
-      [`Edit Change`,     ``, () => { select1EditChange(); }],
-      [`Edit Cut`,        ``, () => { select1EditCut(); }],
+      [`Change`,                    mark, () => { commandQuickPick([
+        [`Space 2 to 4`,            ``,   () => { mainEdit(`Space2To4`); }],
+        [`Space 2 to Tab`,          ``,   () => { mainEdit(`Space2ToTab`); }],
+        [`Space 4 to 2`,            ``,   () => { mainEdit(`Space4To2`); }],
+        [`Space 4 to Tab`,          ``,   () => { mainEdit(`Space4ToTab`); }],
+        [`Tab to Space 2`,          ``,   () => { mainEdit(`TabToSpace2`); }],
+        [`Tab to Space 4`,          ``,   () => { mainEdit(`TabToSpace4`); }],
+      ], `Indent Space : Change`); }],
+      [`Cut`,                       mark, () => { commandQuickPick([
+        [`Cut Min Indent`,          ``,   () => { mainEdit(`CutMinIndent`); }],
+        [`Cut Indent (Trim Begin)`, ``,   () => { mainEdit(`TrimBegin`); }],
+      ], `Indent Space : Cut`); }],
     ], `Indent Space : Select Function`);
-
-    select1EditChange = () => {
-      commandQuickPick([
-        [`Space 2 to 4`,  ``, () => { mainEdit(`Space2To4`); }],
-        [`Space 2 to Tab`,  ``, () => { mainEdit(`Space2ToTab`); }],
-        [`Space 4 to 2`,  ``, () => { mainEdit(`Space4To2`); }],
-        [`Space 4 to Tab`,  ``, () => { mainEdit(`Space4ToTab`); }],
-        [`Tab to Space 2`,  ``, () => { mainEdit(`TabToSpace2`); }],
-        [`Tab to Space 4`,  ``, () => { mainEdit(`TabToSpace4`); }],
-      ], `Indent Space : Change`);
-    };
-
-    select1EditCut = () => {
-      commandQuickPick([
-        [`Cut Min Indent`,          ``, () => { mainEdit(`CutMinIndent`); }],
-        [`Cut Indent (Trim Begin)`, ``, () => { mainEdit(`TrimBegin`); }],
-      ], `Indent Space : Cut`);
-    };
 
   });
 
