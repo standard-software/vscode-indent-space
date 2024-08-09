@@ -5,6 +5,9 @@
 - add CHANGELOG.md
 - update package.json
 - fix README Badge
+- Delete Command
+  - Indent Space | Copy Clipboard | Cut Min Indent
+  - Indent Space | Copy Clipboard | Cut Indent (Trim Begin)
 
 ## [1.3.0] - 2022/05/03 Tue
 - Set title icon

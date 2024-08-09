@@ -1,4 +1,4 @@
-# vscode-indent-space
+# Indent Space
 
 [![](https://vsmarketplacebadges.dev/version-short/SatoshiYamamoto.vscode-indent-space.png)](https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space)
 [![](https://vsmarketplacebadges.dev/installs-short/SatoshiYamamoto.vscode-indent-space.png)](https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space)
@@ -8,7 +8,19 @@
 This extension has the following functions
 - Change the indentation type. Space 2 or 4 or Tab.
 - Remove indent space and edit.
+
 - Remove indent space and copy to clipboard.
+
+## Attention Information
+
+Since v1.4.0, this extension no longer has the ability to copy to the clipboard.
+
+If you need that functionality, please use the following extension
+
+- Copy Format Code - Visual Studio Marketplace  
+https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-copy-format-code
+
+The Copy Format Code extension is more versatile and easier to use than previous versions of this extension. Please use the Copy Format Code Extension.
 
 ## Install
 
@@ -32,8 +44,6 @@ Following commands are available:
 - Indent Space | Edit Cut | Cut Min Indent
 - Indent Space | Edit Cut | Cut Indent (Trim Begin)
 
-- Indent Space | Copy Clipboard | Cut Min Indent
-- Indent Space | Copy Clipboard | Cut Indent (Trim Begin)
 ```
 
 Or Select Function
@@ -48,9 +58,6 @@ Or Select Function
     - Tab to Space 2
     - Tab to Space 4
   - Edit Cut
-    - Cut Min Indent
-    - Cut Indent (Trim Begin)
-  - Copy Clipboard
     - Cut Min Indent
     - Cut Indent (Trim Begin)
 ```

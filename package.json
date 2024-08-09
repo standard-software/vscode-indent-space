@@ -70,16 +70,8 @@
         "title": "Indent Space | Edit Cut | Cut Indent (Trim Begin)"
       },
       {
-        "command": "IndentSpace.CopyCutMinIndent",
-        "title": "Indent Space | Copy Clipboard | Cut Min Indent"
-      },
-      {
-        "command": "IndentSpace.CopyTrimBegin",
-        "title": "Indent Space | Copy Clipboard | Cut Indent (Trim Begin)"
-      },
-      {
         "command": "IndentSpace.SelectFunction",
-        "title": "Indent Space | Select Function"
+        "title": "Indent Space | Select Function ..."
       }
     ],
     "configuration": {

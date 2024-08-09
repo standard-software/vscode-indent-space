@@ -80,7 +80,6 @@ function activate(context) {
     commandQuickPick([
       [`Edit Change`,     ``, () => { select1EditChange(); }],
       [`Edit Cut`,        ``, () => { select1EditCut(); }],
-      [`Copy Clipboard`,  ``, () => { select1Copy(); }],
     ], `Indent Space | Select Function`);
 
     select1EditChange = () => {
@@ -99,13 +98,6 @@ function activate(context) {
         [`Cut Min Indent`,          ``, () => { mainEdit(`CutMinIndent`); }],
         [`Cut Indent (Trim Begin)`, ``, () => { mainEdit(`TrimBegin`); }],
       ], `Indent Space | Edit Cut`);
-    };
-
-    select1Copy = () => {
-      commandQuickPick([
-        [`Cut Min Indent`,          ``, () => { mainCopy(`CopyCutMinIndent`); }],
-        [`Cut Indent (Trim Begin)`, ``, () => { mainCopy(`CopyTrimBegin`); }],
-      ], `Indent Space | Copy Clipboard`);
     };
 
   });
@@ -181,47 +173,6 @@ function activate(context) {
     });
   };
 
-  const mainCopy = (commandName) => {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) {
-      vscode.window.showInformationMessage(`No editor is active`);
-      return;
-    }
-
-    switch (commandName) {
-
-    case `CopyCutMinIndent`: {
-      const minIndent = getMinIndent(editor);
-      let result = ``;
-      for (let { start, end } of editor.selections) {
-        for (let i = start.line; i <= end.line; i += 1) {
-          if (i === end.line && end.character === 0) { break; }
-          const { text, textIncludeLineBreak } = getLineTextInfo(editor, i);
-          if (text.length <= minIndent) {
-            result += textIncludeLineBreak;
-            continue;
-          }
-          result += _subLength(textIncludeLineBreak, minIndent);
-        }
-      };
-      vscode.env.clipboard.writeText(result);
-    } break;
-
-    case `CopyTrimBegin`: {
-      let result = ``;
-      for (let { start, end } of editor.selections) {
-        for (let i = start.line; i <= end.line; i += 1) {
-          if (i === end.line && end.character === 0) { break; }
-          const { textIncludeLineBreak } = getLineTextInfo(editor, i);
-          result += _trimFirst(textIncludeLineBreak, [` `, `\t`],);
-        }
-      };
-      vscode.env.clipboard.writeText(result);
-    } break;
-
-    }
-  };
-
   registerCommand(`IndentSpace.Space2To4`, () => {
     mainEdit(`Space2To4`);
   });
@@ -248,13 +199,6 @@ function activate(context) {
   });
   registerCommand(`IndentSpace.TrimBegin`, () => {
     mainEdit(`TrimBegin`);
-  });
-
-  registerCommand(`IndentSpace.CopyCutMinIndent`, () => {
-    mainCopy(`CopyCutMinIndent`);
-  });
-  registerCommand(`IndentSpace.CopyTrimBegin`, () => {
-    mainCopy(`CopyTrimBegin`);
   });
 
 }
