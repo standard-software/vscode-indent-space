@@ -24,19 +24,16 @@
   "keywords": [
     "indent"
   ],
-  "activationEvents": [
-    "onCommand:IndentSpace.Space2To4",
-    "onCommand:IndentSpace.Space2ToTab",
-    "onCommand:IndentSpace.Space4To2",
-    "onCommand:IndentSpace.Space4ToTab",
-    "onCommand:IndentSpace.TabToSpace2",
-    "onCommand:IndentSpace.TabToSpace4",
-    "onCommand:IndentSpace.CutMinIndent",
-    "onCommand:IndentSpace.TrimBegin",
-    "onCommand:IndentSpace.CopyCutMinIndent",
-    "onCommand:IndentSpace.CopyTrimBegin",
-    "onCommand:IndentSpace.SelectFunction"
-  ],
+  "scripts": {
+    "lint": "eslint --fix ./src",
+    "pack": "vsce package && code --install-extension vscode-indent-space-1.3.0.vsix",
+    "": ""
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "vsce": "^2.7.0"
+  },
+  "activationEvents": [],
   "main": "./src/extension.js",
   "contributes": {
     "commands": [
@@ -99,14 +96,5 @@
         "insertString": "> "
       }
     }
-  },
-  "scripts": {
-    "lint": "eslint --fix ./src",
-    "pack": "vsce package && code --install-extension vscode-indent-space-1.3.0.vsix",
-    "": ""
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "vsce": "^2.7.0"
   }
 }
