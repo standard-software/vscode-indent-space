@@ -1,9 +1,8 @@
 const vscode = require(`vscode`);
 const {
   _trimFirst, _trim,
-  _subIndex, _subLength,
+  _subIndex,
 } = require(`./parts/parts.js`);
-
 
 const loopSelectionsLines = (editor, func) => {
   for (const { start, end } of editor.selections) {
@@ -38,18 +37,6 @@ const getMinIndent = (editor) => {
   return minIndent;
 };
 
-const getLineTextInfo = (editor, lineIndex) => {
-  const lineAt = editor.document.lineAt(lineIndex);
-  const { text } = lineAt;
-  const textIncludeLineBreak = editor.document.getText(
-    lineAt.rangeIncludingLineBreak
-  );
-  const lineBreak = _subLength(textIncludeLineBreak, text.length);
-  return {
-    text, textIncludeLineBreak, lineBreak
-  };
-};
-
 function activate(context) {
 
   const registerCommand = (commandName, func) => {
@@ -76,11 +63,11 @@ function activate(context) {
 
   registerCommand(`IndentSpace.SelectFunction`, () => {
 
-    let select1EditChange, select1EditCut, select1Copy;
+    let select1EditChange, select1EditCut;
     commandQuickPick([
       [`Edit Change`,     ``, () => { select1EditChange(); }],
       [`Edit Cut`,        ``, () => { select1EditCut(); }],
-    ], `Indent Space | Select Function`);
+    ], `Indent Space : Select Function`);
 
     select1EditChange = () => {
       commandQuickPick([
@@ -90,14 +77,14 @@ function activate(context) {
         [`Space 4 to Tab`,  ``, () => { mainEdit(`Space4ToTab`); }],
         [`Tab to Space 2`,  ``, () => { mainEdit(`TabToSpace2`); }],
         [`Tab to Space 4`,  ``, () => { mainEdit(`TabToSpace4`); }],
-      ], `Indent Space | Edit Change`);
+      ], `Indent Space : Change`);
     };
 
     select1EditCut = () => {
       commandQuickPick([
         [`Cut Min Indent`,          ``, () => { mainEdit(`CutMinIndent`); }],
         [`Cut Indent (Trim Begin)`, ``, () => { mainEdit(`TrimBegin`); }],
-      ], `Indent Space | Edit Cut`);
+      ], `Indent Space : Cut`);
     };
 
   });

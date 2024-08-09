@@ -34,30 +34,29 @@ Enter the character string after selecting the command.
 Following commands are available:
 
 ```
-- Indent Space | Edit Change | Space 2 to 4
-- Indent Space | Edit Change | Space 2 to Tab
-- Indent Space | Edit Change | Space 4 to 2
-- Indent Space | Edit Change | Space 4 to Tab
-- Indent Space | Edit Change | Tab to Space 2
-- Indent Space | Edit Change | Tab to Space 4
+- Indent Space : Change : Space 2 to 4
+- Indent Space : Change : Space 2 to Tab
+- Indent Space : Change : Space 4 to 2
+- Indent Space : Change : Space 4 to Tab
+- Indent Space : Change : Tab to Space 2
+- Indent Space : Change : Tab to Space 4
 
-- Indent Space | Edit Cut | Cut Min Indent
-- Indent Space | Edit Cut | Cut Indent (Trim Begin)
-
+- Indent Space : Cut : Min Indent
+- Indent Space : Cut : Indent (Trim Begin)
 ```
 
 Or Select Function
 
 ```
-- Indent Space | Select Function
-  - Edit Change
+- Indent Space : Select Function ...
+  - Change >>
     - Space 2 to 4
     - Space 2 to Tab
     - Space 4 to 2
     - Space 4 to Tab
     - Tab to Space 2
     - Tab to Space 4
-  - Edit Cut
+  - Cut >>
     - Cut Min Indent
     - Cut Indent (Trim Begin)
 ```

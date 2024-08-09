@@ -39,39 +39,39 @@
     "commands": [
       {
         "command": "IndentSpace.Space2To4",
-        "title": "Indent Space | Edit Change | Space 2 to 4"
+        "title": "Indent Space : Change : Space 2 to 4"
       },
       {
         "command": "IndentSpace.Space2ToTab",
-        "title": "Indent Space | Edit Change | Space 2 to Tab"
+        "title": "Indent Space : Change : Space 2 to Tab"
       },
       {
         "command": "IndentSpace.Space4To2",
-        "title": "Indent Space | Edit Change | Space 4 to 2"
+        "title": "Indent Space : Change : Space 4 to 2"
       },
       {
         "command": "IndentSpace.Space4ToTab",
-        "title": "Indent Space | Edit Change | Space 4 to Tab"
+        "title": "Indent Space : Change : Space 4 to Tab"
       },
       {
         "command": "IndentSpace.TabToSpace2",
-        "title": "Indent Space | Edit Change | Tab to Space 2"
+        "title": "Indent Space : Change : Tab to Space 2"
       },
       {
         "command": "IndentSpace.TabToSpace4",
-        "title": "Indent Space | Edit Change | Tab to Space 4"
+        "title": "Indent Space : Change : Tab to Space 4"
       },
       {
         "command": "IndentSpace.CutMinIndent",
-        "title": "Indent Space | Edit Cut | Cut Min Indent"
+        "title": "Indent Space : Cut : Min Indent"
       },
       {
         "command": "IndentSpace.TrimBegin",
-        "title": "Indent Space | Edit Cut | Cut Indent (Trim Begin)"
+        "title": "Indent Space : Cut : Indent (Trim Begin)"
       },
       {
         "command": "IndentSpace.SelectFunction",
-        "title": "Indent Space | Select Function ..."
+        "title": "Indent Space : Select Function ..."
       }
     ],
     "configuration": {
