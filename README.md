@@ -1,9 +1,9 @@
 # vscode-indent-space
 
-[![Version][version-badge]][marketplace]
-[![Ratings][ratings-badge]][marketplace-ratings]
-[![Installs][installs-badge]][marketplace]
-[![License][license-badge]][license]
+[![](https://vsmarketplacebadges.dev/version-short/SatoshiYamamoto.vscode-indent-space.png)](https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space)
+[![](https://vsmarketplacebadges.dev/installs-short/SatoshiYamamoto.vscode-indent-space.png)](https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space)
+[![](https://vsmarketplacebadges.dev/rating-short/SatoshiYamamoto.vscode-indent-space.png)](https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space)
+[![](https://img.shields.io/github/license/standard-software/vscode-indent-space.png)](https://github.com/standard-software/vscode-indent-space/blob/main/LICENSE)
 
 This extension has the following functions
 - Change the indentation type. Space 2 or 4 or Tab.
@@ -64,11 +64,3 @@ Released under the [MIT License][license].
 [./CHANGELOG.md](./CHANGELOG.md)
 
 
-[version-badge]: https://vsmarketplacebadge.apphb.com/version/SatoshiYamamoto.vscode-indent-space.svg
-[ratings-badge]: https://vsmarketplacebadge.apphb.com/rating/SatoshiYamamoto.vscode-indent-space.svg
-[installs-badge]: https://vsmarketplacebadge.apphb.com/installs/SatoshiYamamoto.vscode-indent-space.svg
-[license-badge]: https://img.shields.io/github/license/standard-software/vscode-indent-space.svg
-
-[marketplace]: https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space
-[marketplace-ratings]: https://marketplace.visualstudio.com/items?itemName=SatoshiYamamoto.vscode-indent-space#review-details
-[license]: https://github.com/standard-software/vscode-indent-space/blob/master/LICENSE

@@ -4,6 +4,7 @@
 - update README
 - add CHANGELOG.md
 - update package.json
+- fix README Badge
 
 ## [1.3.0] - 2022/05/03 Tue
 - Set title icon
